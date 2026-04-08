@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn · Chain of Thought</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .learn-section { background: var(--light-bg); }
+    .learn-section .page-eyebrow { color: #3a78b8; }
+    .learn-section .page-title { color: var(--text-dark); }
+    .learn-section .page-subtitle { color: var(--text-muted); }
+
+    .page-header.light {
+      background: var(--light-bg);
+      border-bottom: 1px solid var(--light-border);
+    }
+
+    .week-group { margin-bottom: 56px; }
+
+    .week-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #3a78b8;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--light-border);
+    }
+
+    .learn-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .learn-card {
+      background: var(--light-bg2);
+      border: 1px solid var(--light-border);
+      border-radius: 2px;
+      padding: 24px 28px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      transition: border-color 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .learn-card:hover { border-color: var(--accent); }
+
+    .learn-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px;
+      color: #dde3ec;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .learn-source {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #3a78b8;
+      margin-bottom: 6px;
+    }
+
+    .learn-title {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.5;
+    }
+
+    .learn-category {
+      font-size: 11px;
+      color: #aaa;
+      margin-top: 8px;
+    }
+
+    footer { background: var(--light-bg); border-top: 1px solid var(--light-border); }
+    footer .footer-left { color: #aaa; }
+    footer .footer-right a { color: #aaa; }
+    footer .footer-right a:hover { color: var(--text-dark); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">chain<span>of</span>thought</a>
+  <div class="nav-links">
+    <a href="articles.html" class="lang-en">Articles</a>
+    <a href="articles.html" class="lang-gr">Άρθρα</a>
+    <a href="learn.html" class="lang-en active">Learn</a>
+    <a href="learn.html" class="lang-gr active">Μάθηση</a>
+    <a href="about.html" class="lang-en">About</a>
+    <a href="about.html" class="lang-gr">Σχετικά</a>
+    <a href="contact.html" class="lang-en">Contact</a>
+    <a href="contact.html" class="lang-gr">Επικοινωνία</a>
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">GR</button>
+  </div>
+</nav>
+
+<div class="page-header light learn-section">
+  <div class="page-header-inner">
+    <div class="page-eyebrow lang-en fade-up">Curation</div>
+    <div class="page-eyebrow lang-gr fade-up">Επιλογές</div>
+    <h1 class="page-title fade-up-1 lang-en">Learn from where I'm learning</h1>
+    <h1 class="page-title fade-up-1 lang-gr">Μάθετε από όπου μαθαίνω</h1>
+    <p class="page-subtitle fade-up-2 lang-en">Updated every week. The best reads from supply chain, strategy, and business — curated from the sources I follow daily.</p>
+    <p class="page-subtitle fade-up-2 lang-gr">Ενημερώνεται κάθε εβδομάδα. Οι καλύτερες αναγνώσεις από εφοδιαστική, στρατηγική και επιχειρήσεις.</p>
+  </div>
+</div>
+
+<section class="section learn-section">
+  <div class="section-inner">
+    <div class="week-group">
+      <div class="week-label lang-en">Week of April 7, 2026</div>
+      <div class="week-label lang-gr">Εβδομάδα 7 Απριλίου 2026</div>
+      <div class="learn-grid">
+        <a class="learn-card" href="#">
+          <div class="learn-num">01</div>
+          <div>
+            <div class="learn-source">Supply Chain Dive</div>
+            <div class="learn-title lang-en">How AI is reshaping warehouse slotting decisions in 2026</div>
+            <div class="learn-title lang-gr">Πώς η AI αναδιαμορφώνει τις αποφάσεις slotting αποθήκης</div>
+            <div class="learn-category lang-en">Logistics & WMS</div>
+            <div class="learn-category lang-gr">Logistics & WMS</div>
+          </div>
+        </a>
+        <a class="learn-card" href="#">
+          <div class="learn-num">02</div>
+          <div>
+            <div class="learn-source">McKinsey Insights</div>
+            <div class="learn-title lang-en">The next frontier in logistics technology adoption</div>
+            <div class="learn-title lang-gr">Το επόμενο σύνορο στην υιοθέτηση τεχνολογίας logistics</div>
+            <div class="learn-category lang-en">Strategy</div>
+            <div class="learn-category lang-gr">Στρατηγική</div>
+          </div>
+        </a>
+        <a class="learn-card" href="#">
+          <div class="learn-num">03</div>
+          <div>
+            <div class="learn-source">Harvard Business Review</div>
+            <div class="learn-title lang-en">Why channel sales requires a fundamentally different mindset</div>
+            <div class="learn-title lang-gr">Γιατί οι πωλήσεις καναλιού απαιτούν διαφορετική νοοτροπία</div>
+            <div class="learn-category lang-en">Sales</div>
+            <div class="learn-category lang-gr">Πωλήσεις</div>
+          </div>
+        </a>
+        <a class="learn-card" href="#">
+          <div class="learn-num">04</div>
+          <div>
+            <div class="learn-source">FreightWaves</div>
+            <div class="learn-title lang-en">Southeast Europe as an emerging logistics hub</div>
+            <div class="learn-title lang-gr">Η ΝΑ Ευρώπη ως αναδυόμενος κόμβος logistics</div>
+            <div class="learn-category lang-en">Market & Greece</div>
+            <div class="learn-category lang-gr">Αγορά & Ελλάδα</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">chain<span class="accent">of</span>thought <span class="footer-copy">© 2026 Ioannis Grevenitis</span></div>
+  <div class="footer-right">
+    <a href="https://linkedin.com/in/ioannis-grevenitis" target="_blank">LinkedIn</a>
+    <a href="contact.html" class="lang-en">Contact</a>
+    <a href="contact.html" class="lang-gr">Επικοινωνία</a>
+  </div>
+</footer>
+
+<script>
+  function toggleLang() {
+    const body = document.body;
+    const btn = document.getElementById('langBtn');
+    if (body.classList.contains('greek')) {
+      body.classList.remove('greek');
+      btn.textContent = 'GR';
+      localStorage.setItem('lang', 'en');
+    } else {
+      body.classList.add('greek');
+      btn.textContent = 'EN';
+      localStorage.setItem('lang', 'gr');
+    }
+  }
+  if (localStorage.getItem('lang') === 'gr') {
+    document.body.classList.add('greek');
+    document.getElementById('langBtn').textContent = 'EN';
+  }
+</script>
+</body>
+</html>

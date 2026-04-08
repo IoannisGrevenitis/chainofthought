@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Articles · Chain of Thought</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border-dark);
+      border: 1px solid var(--border-dark);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .article-card {
+      background: var(--dark2);
+      padding: 32px 28px;
+      transition: background 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+    }
+    .article-card:hover { background: #1f2e42; }
+    .article-tag {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .article-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .article-excerpt {
+      font-size: 13px;
+      color: var(--muted2);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .article-meta {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .article-meta::before {
+      content: '';
+      width: 20px;
+      height: 1px;
+      background: var(--border-dark);
+      display: inline-block;
+    }
+    .coming-soon-badge {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--border-dark);
+      padding: 3px 10px;
+      border-radius: 2px;
+      margin-bottom: 32px;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">chain<span>of</span>thought</a>
+  <div class="nav-links">
+    <a href="articles.html" class="lang-en active">Articles</a>
+    <a href="articles.html" class="lang-gr active">Άρθρα</a>
+    <a href="learn.html" class="lang-en">Learn</a>
+    <a href="learn.html" class="lang-gr">Μάθηση</a>
+    <a href="about.html" class="lang-en">About</a>
+    <a href="about.html" class="lang-gr">Σχετικά</a>
+    <a href="contact.html" class="lang-en">Contact</a>
+    <a href="contact.html" class="lang-gr">Επικοινωνία</a>
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">GR</button>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-eyebrow lang-en fade-up">Writing</div>
+    <div class="page-eyebrow lang-gr fade-up">Γραπτό</div>
+    <h1 class="page-title fade-up-1 lang-en">Articles</h1>
+    <h1 class="page-title fade-up-1 lang-gr">Άρθρα</h1>
+    <p class="page-subtitle fade-up-2 lang-en">Thoughts on WMS, supply chain, and the business of logistics. Written from the field, not from a podium.</p>
+    <p class="page-subtitle fade-up-2 lang-gr">Σκέψεις για WMS, εφοδιαστική αλυσίδα και logistics. Γραμμένα από την πράξη, όχι από άμβωνα.</p>
+  </div>
+</div>
+
+<section class="section" style="background: var(--dark);">
+  <div class="section-inner">
+    <div class="coming-soon-badge lang-en">First articles coming soon</div>
+    <div class="coming-soon-badge lang-gr">Τα πρώτα άρθρα έρχονται σύντομα</div>
+    <div class="articles-grid">
+      <a class="article-card" href="#">
+        <div class="article-tag">WMS</div>
+        <div class="article-title lang-en">Why most WMS implementations fail before go-live</div>
+        <div class="article-title lang-gr">Γιατί οι περισσότερες υλοποιήσεις WMS αποτυγχάνουν πριν το go-live</div>
+        <div class="article-excerpt lang-en">The technical setup is rarely the problem. It's what happens before the first warehouse scan that determines success.</div>
+        <div class="article-excerpt lang-gr">Το τεχνικό κομμάτι σπάνια είναι το πρόβλημα. Αυτό που γίνεται πριν το πρώτο scan καθορίζει την επιτυχία.</div>
+        <div class="article-meta lang-en">Coming soon</div>
+        <div class="article-meta lang-gr">Σύντομα</div>
+      </a>
+      <a class="article-card" href="#">
+        <div class="article-tag">Career</div>
+        <div class="article-title lang-en">From consultant to AM: what changes and what doesn't</div>
+        <div class="article-title lang-gr">Από consultant σε AM: τι αλλάζει και τι όχι</div>
+        <div class="article-excerpt lang-en">Moving from implementation to sales feels like a different world. Some skills transfer perfectly. Others need rebuilding from scratch.</div>
+        <div class="article-excerpt lang-gr">Η μετάβαση από υλοποίηση σε πωλήσεις μοιάζει με διαφορετικό κόσμο. Κάποιες δεξιότητες μεταφέρονται τέλεια. Άλλες χρειάζονται νέα θεμέλια.</div>
+        <div class="article-meta lang-en">Coming soon</div>
+        <div class="article-meta lang-gr">Σύντομα</div>
+      </a>
+      <a class="article-card" href="#">
+        <div class="article-tag">Market</div>
+        <div class="article-title lang-en">Northern Greece logistics: an honest overview</div>
+        <div class="article-title lang-gr">Logistics Βόρειας Ελλάδας: μια ειλικρινής επισκόπηση</div>
+        <div class="article-excerpt lang-en">What's actually happening in the Thessaloniki market, where the gaps are, and why the timing matters for WMS adoption.</div>
+        <div class="article-excerpt lang-gr">Τι συμβαίνει πραγματικά στην αγορά της Θεσσαλονίκης και γιατί το timing έχει σημασία για το WMS.</div>
+        <div class="article-meta lang-en">Coming soon</div>
+        <div class="article-meta lang-gr">Σύντομα</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">chain<span class="accent">of</span>thought <span class="footer-copy">© 2026 Ioannis Grevenitis</span></div>
+  <div class="footer-right">
+    <a href="https://linkedin.com/in/ioannis-grevenitis" target="_blank">LinkedIn</a>
+    <a href="contact.html" class="lang-en">Contact</a>
+    <a href="contact.html" class="lang-gr">Επικοινωνία</a>
+  </div>
+</footer>
+
+<script>
+  function toggleLang() {
+    const body = document.body;
+    const btn = document.getElementById('langBtn');
+    if (body.classList.contains('greek')) {
+      body.classList.remove('greek');
+      btn.textContent = 'GR';
+      localStorage.setItem('lang', 'en');
+    } else {
+      body.classList.add('greek');
+      btn.textContent = 'EN';
+      localStorage.setItem('lang', 'gr');
+    }
+  }
+  if (localStorage.getItem('lang') === 'gr') {
+    document.body.classList.add('greek');
+    document.getElementById('langBtn').textContent = 'EN';
+  }
+</script>
+</body>
+</html>

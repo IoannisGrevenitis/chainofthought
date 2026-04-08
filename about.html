@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About · Chain of Thought</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .about-text p {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--muted2);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .about-text p strong { color: #fff; font-weight: 400; }
+    .about-list { list-style: none; }
+    .about-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-dark);
+      font-size: 14px;
+      color: var(--muted2);
+    }
+    .about-list li:first-child { border-top: 1px solid var(--border-dark); }
+    .li-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      min-width: 80px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .li-value { color: #ccc; }
+    .li-value a { color: var(--accent); text-decoration: none; }
+    .timeline { margin-top: 64px; }
+    .timeline-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px;
+      color: #fff;
+      margin-bottom: 32px;
+    }
+    .timeline-item {
+      display: flex;
+      gap: 24px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .timeline-item:first-of-type { border-top: 1px solid var(--border-dark); }
+    .timeline-year {
+      font-size: 12px;
+      color: var(--accent);
+      letter-spacing: 1px;
+      min-width: 80px;
+      margin-top: 3px;
+    }
+    .timeline-role {
+      font-size: 15px;
+      font-weight: 400;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .timeline-company {
+      font-size: 13px;
+      color: var(--muted2);
+      margin-bottom: 8px;
+    }
+    .timeline-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">chain<span>of</span>thought</a>
+  <div class="nav-links">
+    <a href="articles.html" class="lang-en">Articles</a>
+    <a href="articles.html" class="lang-gr">Άρθρα</a>
+    <a href="learn.html" class="lang-en">Learn</a>
+    <a href="learn.html" class="lang-gr">Μάθηση</a>
+    <a href="about.html" class="lang-en active">About</a>
+    <a href="about.html" class="lang-gr active">Σχετικά</a>
+    <a href="contact.html" class="lang-en">Contact</a>
+    <a href="contact.html" class="lang-gr">Επικοινωνία</a>
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">GR</button>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-eyebrow lang-en fade-up">Background</div>
+    <div class="page-eyebrow lang-gr fade-up">Υπόβαθρο</div>
+    <h1 class="page-title fade-up-1 lang-en">About me</h1>
+    <h1 class="page-title fade-up-1 lang-gr">Σχετικά με εμένα</h1>
+    <p class="page-subtitle fade-up-2 lang-en">WMS consultant turned account manager. Based in Thessaloniki, working across northern Greece.</p>
+    <p class="page-subtitle fade-up-2 lang-gr">Από WMS consultant σε account manager. Θεσσαλονίκη, Βόρεια Ελλάδα.</p>
+  </div>
+</div>
+
+<section class="section" style="background: var(--dark);">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="lang-en">I'm an <strong>Account Manager at Entersoftone</strong>, managing the WMS partner network for northern Greece. Before moving into the commercial side, I spent over a year as a WMS Consultant — implementing and training 20+ customers across the region.</p>
+        <p class="lang-gr">Είμαι <strong>Account Manager στην Entersoftone</strong>, διαχειρίζομαι το δίκτυο συνεργατών WMS για τη Βόρεια Ελλάδα. Πριν περάσω στην εμπορική πλευρά, έκανα WMS Consulting — υλοποιώντας και εκπαιδεύοντας 20+ πελάτες.</p>
+        <p class="lang-en">Before that, I was a <strong>Project Manager at VIPA Group</strong>, handling international stakeholder management across the Americas, Asia, EU, and UK — including EDI integrations with major shipping lines like MSC, Maersk, and CMA.</p>
+        <p class="lang-gr">Πριν, ήμουν <strong>Project Manager στη VIPA Group</strong>, με διαχείριση διεθνών stakeholders σε Αμερική, Ασία, ΕΕ και ΗΒ — συμπεριλαμβανομένων EDI integrations με MSC, Maersk και CMA.</p>
+        <p class="lang-en">I hold an <strong>MBA</strong> from the Open University of Cyprus, a <strong>BSc in Logistics & Supply Chain</strong> from IHU, and an <strong>ELA certification</strong> — awarded the KONETA prize for top performance in 2023. I'm an Alternate Board Member of the Hellenic Institute of Logistics Management.</p>
+        <p class="lang-gr">Είμαι κάτοχος <strong>MBA</strong> από το ΑΠΚ, <strong>BSc Logistics & Supply Chain</strong> από το ΔΠΘ και <strong>πιστοποίηση ELA</strong> — βραβείο KONETA για την καλύτερη επίδοση το 2023. Είμαι Αναπληρωματικό Μέλος ΔΣ του ΙΕΕΜ.</p>
+
+        <div class="timeline">
+          <div class="timeline-title lang-en">Experience</div>
+          <div class="timeline-title lang-gr">Εμπειρία</div>
+          <div class="timeline-item">
+            <div class="timeline-year">2026 →</div>
+            <div>
+              <div class="timeline-role lang-en">Account Manager – Partner Network</div>
+              <div class="timeline-role lang-gr">Account Manager – Δίκτυο Συνεργατών</div>
+              <div class="timeline-company">Entersoftone · Thessaloniki</div>
+              <div class="timeline-desc lang-en">WMS partner network management for northern Greece. Channel sales, presales, partner enablement.</div>
+              <div class="timeline-desc lang-gr">Διαχείριση δικτύου συνεργατών WMS για τη Βόρεια Ελλάδα. Channel sales, presales, partner enablement.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2024–2026</div>
+            <div>
+              <div class="timeline-role lang-en">WMS Consultant</div>
+              <div class="timeline-role lang-gr">WMS Consultant</div>
+              <div class="timeline-company">Entersoftone · Thessaloniki</div>
+              <div class="timeline-desc lang-en">Customer needs analysis, WMS implementation, consulting and training for 20+ customers.</div>
+              <div class="timeline-desc lang-gr">Ανάλυση αναγκών πελατών, υλοποίηση WMS, consulting και εκπαίδευση για 20+ πελάτες.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2022–2024</div>
+            <div>
+              <div class="timeline-role lang-en">Project Manager</div>
+              <div class="timeline-role lang-gr">Project Manager</div>
+              <div class="timeline-company">VIPA Group · International</div>
+              <div class="timeline-desc lang-en">International stakeholder management (Americas, Asia, EU, UK). EDI integrations with MSC, Maersk, CMA, COSCO. Italy market launch.</div>
+              <div class="timeline-desc lang-gr">Διαχείριση διεθνών stakeholders. EDI integrations με MSC, Maersk, CMA, COSCO. Λανσάρισμα αγοράς Ιταλίας.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2021–2022</div>
+            <div>
+              <div class="timeline-role lang-en">Warehouse Coordinator</div>
+              <div class="timeline-role lang-gr">Warehouse Coordinator</div>
+              <div class="timeline-company">Plaisio · Thessaloniki</div>
+              <div class="timeline-desc lang-en">B2B/B2C routing, distribution center operations, team of 5.</div>
+              <div class="timeline-desc lang-gr">B2B/B2C δρομολόγηση, λειτουργίες κέντρου διανομής, ομάδα 5 ατόμων.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <ul class="about-list">
+          <li>
+            <span class="li-label lang-en">Role</span>
+            <span class="li-label lang-gr">Ρόλος</span>
+            <span class="li-value lang-en">Account Manager, Entersoftone</span>
+            <span class="li-value lang-gr">Account Manager, Entersoftone</span>
+          </li>
+          <li>
+            <span class="li-label lang-en">Location</span>
+            <span class="li-label lang-gr">Τοποθεσία</span>
+            <span class="li-value lang-en">Thessaloniki, Greece</span>
+            <span class="li-value lang-gr">Θεσσαλονίκη, Ελλάδα</span>
+          </li>
+          <li>
+            <span class="li-label lang-en">Focus</span>
+            <span class="li-label lang-gr">Εστίαση</span>
+            <span class="li-value lang-en">WMS · Supply Chain · Northern Greece</span>
+            <span class="li-value lang-gr">WMS · Εφοδιαστική · Βόρεια Ελλάδα</span>
+          </li>
+          <li>
+            <span class="li-label lang-en">Education</span>
+            <span class="li-label lang-gr">Εκπαίδευση</span>
+            <span class="li-value">MBA · BSc Logistics · ELA Certified</span>
+          </li>
+          <li>
+            <span class="li-label lang-en">Member</span>
+            <span class="li-label lang-gr">Μέλος</span>
+            <span class="li-value lang-en">Hellenic Institute of Logistics Management</span>
+            <span class="li-value lang-gr">Ελληνικό Ινστιτούτο Εφοδιαστικής</span>
+          </li>
+          <li>
+            <span class="li-label">LinkedIn</span>
+            <span class="li-value"><a href="https://linkedin.com/in/ioannis-grevenitis" target="_blank">linkedin.com/in/ioannis-grevenitis</a></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">chain<span class="accent">of</span>thought <span class="footer-copy">© 2026 Ioannis Grevenitis</span></div>
+  <div class="footer-right">
+    <a href="https://linkedin.com/in/ioannis-grevenitis" target="_blank">LinkedIn</a>
+    <a href="contact.html" class="lang-en">Contact</a>
+    <a href="contact.html" class="lang-gr">Επικοινωνία</a>
+  </div>
+</footer>
+
+<script>
+  function toggleLang() {
+    const body = document.body;
+    const btn = document.getElementById('langBtn');
+    if (body.classList.contains('greek')) {
+      body.classList.remove('greek');
+      btn.textContent = 'GR';
+      localStorage.setItem('lang', 'en');
+    } else {
+      body.classList.add('greek');
+      btn.textContent = 'EN';
+      localStorage.setItem('lang', 'gr');
+    }
+  }
+  if (localStorage.getItem('lang') === 'gr') {
+    document.body.classList.add('greek');
+    document.getElementById('langBtn').textContent = 'EN';
+  }
+</script>
+</body>
+</html>

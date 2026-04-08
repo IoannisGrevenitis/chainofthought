@@ -1,11 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chain of Thought</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ioannis Grevenitis · Chain of Thought</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 48px 80px;
+      background: var(--black);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(78,144,212,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 80px;
+    }
+    .hero-text { flex: 1; }
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .hero-text h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 64px;
+      font-weight: 400;
+      line-height: 1.05;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .hero-text h1 em { font-style: italic; color: var(--accent); }
+    .hero-tagline {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--muted2);
+      line-height: 1.7;
+      max-width: 480px;
+      margin-bottom: 40px;
+    }
+    .hero-cta { display: flex; gap: 16px; align-items: center; }
+    .hero-photo-wrap { flex-shrink: 0; position: relative; }
+    .hero-photo-wrap::before {
+      content: '';
+      position: absolute;
+      top: 16px; left: 16px;
+      width: 200px; height: 200px;
+      border: 1px solid var(--accent);
+      border-radius: 2px;
+      opacity: 0.25;
+    }
+    .hero-photo {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 2px;
+      display: block;
+      position: relative;
+      z-index: 1;
+      filter: grayscale(15%);
+    }
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-dark);
+    }
+    .stat-number { font-family: 'DM Serif Display', serif; font-size: 28px; color: #fff; }
+    .stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .home-sections {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border-dark);
+      border-top: 1px solid var(--border-dark);
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .home-section-card {
+      background: var(--dark);
+      padding: 48px 40px;
+      text-decoration: none;
+      transition: background 0.2s;
+      display: block;
+    }
+    .home-section-card:hover { background: var(--dark2); }
+    .home-card-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+    .home-card-title { font-family: 'DM Serif Display', serif; font-size: 24px; color: #fff; margin-bottom: 12px; }
+    .home-card-desc { font-size: 14px; color: var(--muted2); line-height: 1.6; margin-bottom: 24px; }
+    .home-card-arrow { font-size: 13px; color: var(--accent); }
+  </style>
 </head>
 <body>
-    <h1>Coming Soon</h1>
+
+<nav>
+  <a href="index.html" class="nav-logo">chain<span>of</span>thought</a>
+  <div class="nav-links">
+    <a href="articles.html" class="lang-en">Articles</a>
+    <a href="articles.html" class="lang-gr">Άρθρα</a>
+    <a href="learn.html" class="lang-en">Learn</a>
+    <a href="learn.html" class="lang-gr">Μάθηση</a>
+    <a href="about.html" class="lang-en">About</a>
+    <a href="about.html" class="lang-gr">Σχετικά</a>
+    <a href="contact.html" class="lang-en">Contact</a>
+    <a href="contact.html" class="lang-gr">Επικοινωνία</a>
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">GR</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow lang-en fade-up">Account Manager · WMS & Supply Chain</div>
+      <div class="hero-eyebrow lang-gr fade-up">Account Manager · WMS & Εφοδιαστική Αλυσίδα</div>
+      <h1 class="fade-up-1 lang-en">Ioannis<br><em>Grevenitis</em></h1>
+      <h1 class="fade-up-1 lang-gr">Ιωάννης<br><em>Γρεβενίτης</em></h1>
+      <p class="hero-tagline fade-up-2 lang-en">Connecting logistics knowledge with commercial thinking. Writing about supply chain, WMS, and the things worth learning along the way.</p>
+      <p class="hero-tagline fade-up-2 lang-gr">Συνδέω τη γνώση της εφοδιαστικής με εμπορική σκέψη. Γράφω για supply chain, WMS και ό,τι αξίζει να μαθαίνουμε στην πορεία.</p>
+      <div class="hero-cta fade-up-3">
+        <a href="articles.html" class="btn-primary lang-en">Read articles</a>
+        <a href="articles.html" class="btn-primary lang-gr">Διαβάστε άρθρα</a>
+        <a href="contact.html" class="btn-ghost lang-en">Get in touch</a>
+        <a href="contact.html" class="btn-ghost lang-gr">Επικοινωνήστε</a>
+      </div>
+      <div class="hero-stats fade-up-3">
+        <div>
+          <div class="stat-number">4+</div>
+          <div class="stat-label lang-en">Years in logistics</div>
+          <div class="stat-label lang-gr">Χρόνια στην εφοδιαστική</div>
+        </div>
+        <div>
+          <div class="stat-number">20+</div>
+          <div class="stat-label lang-en">WMS implementations</div>
+          <div class="stat-label lang-gr">WMS υλοποιήσεις</div>
+        </div>
+        <div>
+          <div class="stat-number">MBA</div>
+          <div class="stat-label lang-en">Open University of Cyprus</div>
+          <div class="stat-label lang-gr">Ανοιχτό Πανεπιστήμιο Κύπρου</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-photo-wrap fade-up-2">
+      <img src="cv.jpeg" alt="Ioannis Grevenitis" class="hero-photo" />
+    </div>
+  </div>
+</section>
+
+<div class="home-sections">
+  <a href="articles.html" class="home-section-card">
+    <div class="home-card-label lang-en">Writing</div>
+    <div class="home-card-label lang-gr">Γραπτό</div>
+    <div class="home-card-title lang-en">Articles</div>
+    <div class="home-card-title lang-gr">Άρθρα</div>
+    <div class="home-card-desc lang-en">Thoughts on WMS, supply chain, and the business of logistics in northern Greece.</div>
+    <div class="home-card-desc lang-gr">Σκέψεις για WMS, εφοδιαστική αλυσίδα και logistics στη Βόρεια Ελλάδα.</div>
+    <div class="home-card-arrow">Read →</div>
+  </a>
+  <a href="learn.html" class="home-section-card">
+    <div class="home-card-label">Curation</div>
+    <div class="home-card-title lang-en">Learn from where I'm learning</div>
+    <div class="home-card-title lang-gr">Μάθετε από όπου μαθαίνω</div>
+    <div class="home-card-desc lang-en">Updated weekly. The best reads from supply chain, strategy, and business.</div>
+    <div class="home-card-desc lang-gr">Ενημερώνεται εβδομαδιαία. Οι καλύτερες αναγνώσεις από εφοδιαστική και στρατηγική.</div>
+    <div class="home-card-arrow">Explore →</div>
+  </a>
+  <a href="about.html" class="home-section-card">
+    <div class="home-card-label lang-en">Background</div>
+    <div class="home-card-label lang-gr">Υπόβαθρο</div>
+    <div class="home-card-title lang-en">About me</div>
+    <div class="home-card-title lang-gr">Σχετικά με εμένα</div>
+    <div class="home-card-desc lang-en">WMS consultant turned account manager. Based in Thessaloniki, working across northern Greece.</div>
+    <div class="home-card-desc lang-gr">Από WMS consultant σε account manager. Θεσσαλονίκη, Βόρεια Ελλάδα.</div>
+    <div class="home-card-arrow">Learn more →</div>
+  </a>
+</div>
+
+<footer>
+  <div class="footer-left">chain<span class="accent">of</span>thought <span class="footer-copy">© 2026 Ioannis Grevenitis</span></div>
+  <div class="footer-right">
+    <a href="https://linkedin.com/in/ioannis-grevenitis" target="_blank">LinkedIn</a>
+    <a href="contact.html" class="lang-en">Contact</a>
+    <a href="contact.html" class="lang-gr">Επικοινωνία</a>
+  </div>
+</footer>
+
+<script>
+  function toggleLang() {
+    const body = document.body;
+    const btn = document.getElementById('langBtn');
+    if (body.classList.contains('greek')) {
+      body.classList.remove('greek');
+      btn.textContent = 'GR';
+      localStorage.setItem('lang', 'en');
+    } else {
+      body.classList.add('greek');
+      btn.textContent = 'EN';
+      localStorage.setItem('lang', 'gr');
+    }
+  }
+  if (localStorage.getItem('lang') === 'gr') {
+    document.body.classList.add('greek');
+    document.getElementById('langBtn').textContent = 'EN';
+  }
+</script>
 </body>
 </html>
